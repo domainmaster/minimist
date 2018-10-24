@@ -1,0 +1,359 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.sm_hidden{
+    display: none;
+}
+
+html{
+    font-size: 16px;
+}
+html,body{
+    padding: 0;
+    margin: 0;
+}
+html, body, .wrapper{
+    height: 100vh;
+}
+
+body{
+    color: black;
+    font-family: 'Fira Mono', monospace;
+}
+body .wrapper{
+    margin: 0 auto;
+    max-width: 60rem; /*test it later in larger screens maybe 100rem?*/
+    width: 100%;
+    padding: 0 1.5rem;
+
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: auto 1fr auto;
+    /* grid-template-areas:
+    "navigation"
+    "profile"
+    "footer"; */
+    justify-items: stretch; /*each section will take full width*/
+}
+body .wrapper *{
+    max-width: 100%;
+}
+#main_nav{
+    display: -webkit-flex;
+    display: flex;
+    font-size: .94rem;
+    margin: 1.25rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.0031rem;
+    text-align: center;
+}
+
+#main_nav .logo{
+    flex: 1;
+    font-weight: 700;
+}
+#main_nav .nav_links{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-weight: 700;
+    
+    flex: 2;
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+#main_nav .nav_links li a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    text-align: right;
+    padding: 0 0.625rem;
+}
+
+#main_nav .nav_links li:last-child a{
+    padding-right: 0;
+}
+#main_nav .nav_links li a:hover,
+#main_nav .nav_links li a:visited,
+#main_nav .nav_links li a:clicked{
+    color: inherit;
+    text-decoration: none;
+}
+
+#profile{
+    text-align: center;
+    align-self: center;
+
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-rows: 20% max-content max-content max-content max-content max-content 1fr; */
+    grid-template-rows: repeat(5, max-content);
+    align-content: center;
+    grid-template-columns: none;
+    justify-items: stretch;
+    height: 100%;
+
+    
+}
+.page_title{
+    font-weight: 700;
+    letter-spacing: 0.1875rem;
+    font-size: 1.625rem;
+    text-transform: uppercase;
+    margin: 0 0 0.625rem 0; /*1.5625rem*/
+    grid-row: 1/2;
+    grid-column: 1/2;
+    line-height: 1.8em;
+}
+#profile .subtitle{
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #939393;
+    letter-spacing: 0.1113rem;
+    margin: 0;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    line-height: 1.8em;
+}
+#social_links{
+    padding: 0;
+    list-style: none;
+    margin: 2.1875rem 0;
+    display: flex;
+    justify-content: center;
+    grid-row: 3/4;
+    grid-column: 1/2;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0013rem;
+    font-weight: 500;
+    line-height: 1.8em;
+}
+
+#social_links li a{
+    text-decoration: none;
+    color: inherit;
+    padding: 0 0.9375rem;
+}
+
+#social_links li a:hover,
+#social_links li a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+#social_links li a:hover{
+    text-decoration: underline;
+}
+.seperator{
+    border: none;
+    height: 1px;
+    background-color: #939393;
+    width: 7.875rem;
+    /* width: 35vw; could be an idea?*/
+    grid-row: 4/5;
+    grid-column: 1/2;
+    margin: 2.1875rem auto;
+}
+#profile a.email{
+    color:inherit;
+    font-size: .75rem;
+    letter-spacing: 0.1113rem;
+    text-decoration: underline;
+    font-weight: 700;
+    grid-row: 5/6;
+    grid-column: 1/2;
+}
+#profile a.email:hover,
+#profile a.email:visited{
+    color: inherit;
+}
+
+footer p{
+    text-align: center;
+    font-size: .5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #939393;
+    letter-spacing: 0.0031rem;
+    margin: 0.625rem 0;
+}
+
+/* TODO: isn't this page specific? */
+.blog .page_title{
+    margin: 0;
+}
+.blog .seperator{
+    width: 5.625rem;
+}
+
+
+#content{
+    text-align: left;
+    margin: 1.5625rem 0;
+}
+#content .seperator{
+    margin: 0;
+}
+
+.post_list{
+    padding: 0;
+    margin: 1.25rem 0 0 0;
+    list-style: none;
+}
+.post_list .article{
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.0031rem;
+    line-height: 1.5em;
+}
+.post_list .article a{
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 1rem 0;
+
+}
+.post_list .article a:hover,
+.post_list .article a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+.post_list .article a:hover{
+    /*TODO hover effect*/
+}
+.post_list .article a .article_date{
+    display: block; /*will change to inline-block with margins in desktop view*/
+    color: #848484;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+article#content{
+    padding-right: 1.875rem;
+}
+
+article#content .page_title{
+    word-spacing: -0.5rem;
+    padding-right: 1.875rem;
+}
+
+article#content h2{
+    line-height: 2rem;
+    margin: 2.5rem 0 0 0;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+article#content h3,
+article#content p{
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.5625rem;
+}
+article#content h3{
+    font-weight: 700;
+    margin: 1rem 0 0 0;
+    color: #393939;
+    font-size: 1.25rem;
+}
+article#content p{
+    font-size: 1rem;
+    color: #5f5f5f;
+    font-weight: 400;
+    margin: 1.25rem 0;
+}
+
+article#content p strong{
+    color: #393939;
+}
+
+article#content .post_head{
+    margin-top: 1.5625rem;
+}
+article#content .post_head .page_title{
+    margin-top: 0;
+}
+article#content .post_head .article_date{
+    color: #939393;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2rem;
+    font-family: 'Fira Mono', monospace;
+}
+article#content .post_body{
+    margin-top: 2.5rem;
+}
+
+article figure,
+article image{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+article a{
+    color: #5694f1;
+}
+
+
+/*------ Start Page Specific Styles -------*/
+body.homepage .rssLink,
+body.article .rssLink,
+body.about .rssLink{
+    display: none;
+}
+body.blog .blogLink{
+    display: none;
+}
+body.homepage .homeLink{
+    display: none;
+}
+
+/*------ End Page Specific Styles -------*/
+
+/*------ Start Responsive Styles -------*/
+
+/* #main_nav .nav_links li a:hover{
+    text-decoration: underline;
+} */
+
+@media screen and (orientation:landscape){
+    /*TODO: check that in works only on mobile landscape*/
+    #social_links{
+        margin: 1.875rem auto;
+    }
+    .seperator{
+        margin: 0 auto 1.875rem auto;
+    }
+}
+
+/*------ End Responsive Styles -------*/
+
+
+/* TODO 
+    -fix homepage footer grid on landscape phone
+    - fix homepage space between title and subtitle
+article: 
+    lists (ol / ul)
+    h4
+    artilce figures and code blocks should take full width (step on the right padding)
+
+
+Before Release:
+    - convert all px to rem
+    - add links and mailto
+    - check comments
+*/
