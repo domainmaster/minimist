@@ -14,49 +14,49 @@
     <script src="app.js"></script>
 
 </head>
-<body class="blog">
+<body>
     <div class="wrapper">
-        <nav id="main_nav">
-            <div class="logo"></div>
-            <ul class="nav_links">
-                <li class="homeLink"><a href="index.html">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li class="blogLink"><a href="blog.html">Blog</a></li>
-                <li class="rssLink"><a href="#">RSS</a></li>
-                <li><a href="about.html">About</a></li>
+        <div class="headerTitle"></div>
+        <nav class="nav">
+            <ul class="nav__row">
+                <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
+                <li class="nav__item nav__item--noneOnPage"><a class="nav__link" href="blog.html">Blog</a></li>
+                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                <li class="nav__item nav__item--displayOnTablet nav__item--displayOnMobile"><a class="nav__link nav__link--noPadR" href="#">RSS</a></li>
             </ul>
         </nav>
 
-        <section id="content">
-            <h1 class="page_title">Blog</h1>
-            <hr class="seperator">
-            <ul class="post_list">
-                <li class="article"><a href="#">
-                    <time datetime="2018-1-6" class="article_date">January 6, 2018</time>
+        <section class="blog">
+            <h1 class="blog__title">Blog</h1>
+            <hr class="blog__seperator">
+            <ul class="blog__postList">
+                <li class="blog__postItem"><a class="blog__postLink" href="#">
+                    <time datetime="2018-1-6" class="blog__postDate">January 6, 2018</time>
                     On Writing
                 </a></li>
-                <li class="article"><a href="#">
-                    <time datetime="2017-8-15" class="article_date">Augest 15, 2017</time>
+                <li class="blog__postItem"><a class="blog__postLink" href="#">
+                    <time datetime="2017-8-15" class="blog__postDate">Augest 15, 2017</time>
                     Deploying Hugo Website Using RSync
                 </a></li>
-                <li class="article"><a href="article.html">
-                    <time datetime="2017-8-15" class="article_date">July 31, 2017</time>
+                <li class="blog__postItem"><a class="blog__postLink" href="article.html">
+                    <time datetime="2017-8-15" class="blog__postDate">July 31, 2017</time>
                     Thoughts on Maslow’s Heirarchy of Needs
                 </a></li>
-                <li class="article"><a href="#">
-                    <time datetime="2017-8-15" class="article_date">July 29, 2017</time>
+                <li class="blog__postItem"><a class="blog__postLink" href="#">
+                    <time datetime="2017-8-15" class="blog__postDate">July 29, 2017</time>
                     First Post &amp; Hugo Site Generator
                 </a></li>
-                <li class="article"><a href="#">
-                    <time datetime="2017-8-15" class="article_date">January 6, 2018</time>
+                <li class="blog__postItem"><a class="blog__postLink" href="#">
+                    <time datetime="2017-8-15" class="blog__postDate">January 6, 2018</time>
                     On Writing
                 </a></li>
             </ul>
 
         </section>
 
-        <footer>
-            <p>Copyright © 2018, Omar AlMashjari; all rights reserved.</p>
+        <footer class="footer">
+            <p class="footer__text">Copyright © 2018, Omar AlMashjari; all rights reserved.</p>
         </footer>
     </div>
 

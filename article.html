@@ -14,43 +14,65 @@
     <script src="app.js"></script>
 
 </head>
-<body class="article">
+<body>
     <div class="wrapper">
-        <nav id="main_nav">
-            <div class="logo"></div>
-            <ul class="nav_links">
-                <li class="homeLink"><a href="index.html">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li class="blogLink"><a href="blog.html">Blog</a></li>
-                <li class="rssLink"><a href="#">RSS</a></li>
-                <li><a href="about.html">About</a></li>
+        <div class="headerTitle"></div>
+        <nav class="nav">
+            <ul class="nav__row">
+                <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
+                <li class="nav__item nav__item--noneOnPage"><a class="nav__link" href="blog.html">Blog</a></li>
+                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                <li class="nav__item nav__item--displayOnTablet nav__item--displayOnMobile"><a class="nav__link nav__link--noPadR" href="#">RSS</a></li>
             </ul>
         </nav>
 
-        <article id="content">
-            <div class="post_head">
-                <time class="article_date" datetime="2018-8-16">August 16, 2018</time>
-                <h1 class="page_title">Thoughts On Maslow's Hierarchy Of Needs</h1>
-                <hr class="seperator">
+        <article class="article">
+            <div class="article__head">
+                <time class="article__date" datetime="2018-8-16">August 16, 2018</time>
+                <h1 class="article__title">Thoughts On Maslow's Hierarchy Of Needs</h1>
+                <hr class="article__seperator">
             </div>
             
-            <div class="post_body">
+            <div class="article__body">
+                <h1 class="article__h1">Hello, world!</h1>
+                <h2 class="article__h2">Hello, world!</h2>
+                <h3 class="article__h3">Hello, world!</h3>
+                <h4 class="article__h4">Hello, world!</h4>
+                <h5 class="article__h5">Hello, world!</h5>
+                <h6 class="article__h6">Hello, world!</h6>
+                <hr class="article__hr">
+                <p class="article__p"><strong class="article__strong">Bold text.</strong></p>
+                <p class="article__p"><i class="article__i">Let’s try this</i></p>
                 
+
+                <figure class="article__figure">
+                        <img class="article__image" src="../sshConnect.png" alt="Maslow's Pyramid">
+                    
+                    <figcaption class="article__figcaption">
+                        <p class="article__figcaptionPar">
+                        Maslow's pyramid as his Hierarchy Of Needs theory explains it
+                        </p> 
+                    </figcaption>
+                    
+                </figure>
+
+
                 <p>In a psychology class, and after discussing Maslow’s hierarchy of needs and how it explains how motivation in humans works, the professor asked “<em>How do explain the people who became artists/musicians/..etc and achieved a level of fulfillment and happiness but also has been poor and did not having all life essentials?</em>”. This question triggered me, maybe because it’s linked to the topics of happiness and satisfaction and how do we define them and most importantly how can I apply them in my life.</p>
 
-                <h2 id="what-is-maslow-s-hierarchy">What is Maslow’s hierarchy? exactly</h2>
+                <h2 id="what-is-maslow-s-hierarchy">Know your requirements</h2>
 
                 <p>Maslow’s hierarchy as defined in Wikipedia is a theory proposed to explain human acts’ motivations, and how do our motivations grow and move-through to reach the top level which he called ‘self transcendent’ or ‘self actualization’.</p>
                 
-                <h3 id="how-did-i-explain-it">How did I explain it?</h3>
+                <h3 id="how-did-i-explain-it">How did I explain it</h3>
 
                 <p>Ultimately the theory pictures the shape of a pyramid consists of five levels (or six in some graphs). The levels starts with our most basic needs to survive at the bottom then goes through the human needs ranking them by their importance to our lives.</p>
 
 
-                <figure>
-                        <img src="../MaslowsPyramid.png" alt="Maslow's Pyramid">
+                <figure class="article__figure">
+                        <img class="article__image" src="../MaslowsPyramid.png" alt="Maslow's Pyramid">
                     
-                    <figcaption>
+                    <figcaption class="article__figcaption">
                         <p>
                         Maslow's pyramid as his Hierarchy Of Needs theory explains it
                         </p> 
@@ -81,8 +103,8 @@
             
         </article>
 
-        <footer>
-            <p>Copyright © 2018, Omar AlMashjari; all rights reserved.</p>
+        <footer class="footer">
+            <p class="footer__text">Copyright © 2018, Omar AlMashjari; all rights reserved.</p>
         </footer>
     </div>
 
