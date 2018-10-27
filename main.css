@@ -22,28 +22,37 @@ html, body, .wrapper{
 body{
     color: black;
     font-family: 'Fira Mono', monospace;
+    /* overflow: hidden; */
+}
+img{
+    width: 100%;
 }
 
-body .wrapper{
+.wrapper{
     margin: 0 auto;
-    max-width: 60rem; /* TODO test it later in larger screens maybe 100rem?*/
-    width: 100%;
-    padding: 0 1.5rem;
+    width: 100vw;
+    max-width: 60rem; /*TODO change for desktop*/
+    /* padding: 0 1.5rem; */
 
     display: -ms-grid;
     display: grid;
     grid-template-columns: none;
     grid-template-rows: auto 1fr auto;
+    justify-items: stretch;
     /* grid-template-areas:
     "navigation"
     "profile"
     "footer"; */
-    justify-items: stretch;
+    
 }
-body .wrapper *{
-    max-width: 100%;
+.wrapper *{
+    /* max-width: 100%; */
 }
 
+.innerWrapper{ /*Todo add to all html pages */
+    padding: 0 1.5rem;
+    max-width: 100vw;
+}
 
 /* 
 Block Name: .nav block
@@ -283,7 +292,7 @@ Description: article content
 .article{
     text-align: left;
     margin: 50px 0;
-    padding-right: 1.875rem;
+    /* padding-right: 1.875rem; */
     grid-row: 2/3;
 }
 .article__head{
@@ -315,99 +324,186 @@ Description: article content
 }
 .article__body{
     margin-top: 2.5rem;
-}
-.article__h1,
-.article__h2,
-.article__h3,
-.article__h4,
-.article__h5,
-.article__h6{
     font-family: 'PT Sans', sans-serif;
+    color: #5f5f5f;
+}
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6{
     margin: 20px 0 0 0;
 }
 
-.article__h1{
+.article h1{
     font-weight: 700;
     font-size: 2rem;
     line-height: 1.5em;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.article__h2{
+.article h2{
     font-weight: 700;
     font-size: 1.6rem;  
     line-height: 1.2em;  
     letter-spacing: 1px;
 }
-.article__h3{
+.article h3{
     font-weight: 700;
     color: #393939;
     line-height: 1.2em;
     font-size: 1.4rem;
 }
-.article__h4{
+.article h4{
     font-size: 1.4rem;
     color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article__h5{
+.article h5{
     font-size: 1.2rem;
     color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article__h6{
+.article h6{
     font-size: 1rem;
     color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article__p{
-    font-family: 'PT Sans', sans-serif;
+.article p{
     line-height: 1.5625rem;
     font-size: 1rem;
     color: #5f5f5f;
     font-weight: 400;
     margin: 1.25rem 0;
 }
-.article__strong{
+.article strong{
     color: #393939;
 }
-.article__i{
-    color: #393939;
+.article i{
+    color: #393939; /*not sure about this*/
 }
-.article__hr{
+.article hr{
     border: none;
     height: 1px;
     background-color: #939393;
     width: 11.875rem; /* TODO make it taller on laptop*/
     margin: 1.875rem auto;
 }
-.article__figure{
+.article figure{
     text-align: center; 
     margin: 0 0 0 30px;
-    padding: 0;
+    padding: 0; 
+
+    margin: 0;
+    /* margin: 0;
+    width: 100vw;
+    position: relative;
+    left: -1.5rem; */
 }
-.article__image{
+.article image{
     text-align: center; 
     margin: 0;
     padding: 0;
 }
-.article__figcaption{
+.article figcaption{
     
 }
-.article__figcaptionPar {
+.article figcaption p {
     margin: 5px 0;
     font-size: 0.75rem;
     line-height: 1.4;
     color: #393939;
 }
-.article__link{
+.article a{
     color: #5694f1;
 }
+.article blockquote{
+    text-align: left;
+    color: #5f5f5f;
+    margin: 20px; /*make it 40px on sides on desktop*/
+    padding-left: 20px;
+    border-left: 2px solid #5f5f5f;
+    
+}
+.article blockquote:before{
+    content:'\201C';
+    color: #393939;
+    font-size: 1.4rem;
+}
+.article blockquote:after{
+    content: '\201D';
+    color: #393939;
+    font-size: 1.4rem;
+}
 
-
+.article pre{ 
+	white-space:pre-wrap;
+	padding:20px;
+	overflow:auto;
+	border-radius: 3px;
+	background: #272722;
+	  font-family: 'Source Code Pro',Menlo,monospace; /*TODO add source code pro*/
+	  font-size: 14px;
+	  line-height: 1.5em;
+	  font-weight: 500;
+	color: #d0d4d7;
+}
+.article code{
+    font-family:Menlo, Monaco, Courier; 
+	font-size:14px; 
+	padding: 4px; 
+	font-weight: 600;
+}
+.article li{
+    padding: 5px;
+}
+/*nested lists*/
+.article ul li ul li{
+    list-style-type: square;
+}
+.article ul li ul li ul li{
+    list-style-type: circle;
+}
+.article ol li ol li{
+    list-style-type: lower-alpha;
+}
+.article kbd{
+    font-weight: 700;
+    background: #272722;
+    color: #d0d4d7;
+    padding: 3px;
+    border-radius: 3px;
+}
+.article svg{
+    max-width: 100%;
+}
+.article table{
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto; /*Todo make it 40px or more on deskotp*/
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+.article td{
+    text-align: left;
+    border: 1px solid #5f5f5f;
+    padding: 10px;
+}
+.article th,
+.article tfoot td{
+    text-align: center;
+    border: 1px solid #5f5f5f;
+    color: #393939;
+    padding: 10px;
+}
+.article table caption{
+    color: #393939;
+    margin: 10px auto;
+}
 
 
 
