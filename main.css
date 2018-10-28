@@ -327,101 +327,101 @@ Description: article content
     font-family: 'PT Sans', sans-serif;
     color: #5f5f5f;
 }
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6{
+.article__body h1,
+.article__body h2,
+.article__body h3,
+.article__body h4,
+.article__body h5,
+.article__body h6{
     margin: 20px 0 0 0;
 }
 
-.article h1{
+.article__body h1{
     font-weight: 700;
     font-size: 2rem;
     line-height: 1.5em;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.article h2{
+.article__body h2{
     font-weight: 700;
     font-size: 1.6rem;  
     line-height: 1.2em;  
     letter-spacing: 1px;
 }
-.article h3{
+.article__body h3{
     font-weight: 700;
     color: #393939;
     line-height: 1.2em;
     font-size: 1.4rem;
 }
-.article h4{
+.article__body h4{
     font-size: 1.4rem;
     color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article h5{
+.article__body h5{
     font-size: 1.2rem;
     color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article h6{
+.article__body h6{
     font-size: 1rem;
     color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article p{
+.article__body p{
     line-height: 1.5625rem;
     font-size: 1rem;
     color: #5f5f5f;
     font-weight: 400;
     margin: 1.25rem 0;
 }
-.article strong{
+.article__body strong{
     color: #393939;
 }
-.article i{
+.article__body i{
     color: #393939; /*not sure about this*/
 }
-.article hr{
+.article__body hr{
     border: none;
     height: 1px;
     background-color: #939393;
     width: 11.875rem; /* TODO make it taller on laptop*/
     margin: 1.875rem auto;
 }
-.article figure{
+.article__body figure{
     text-align: center; 
-    margin: 0 0 0 30px;
-    padding: 0; 
+    /* margin: 0 0 0 30px; */
+    padding: 0;
 
+    /* full width */
     margin: 0;
-    /* margin: 0;
     width: 100vw;
     position: relative;
-    left: -1.5rem; */
+    left: -1.5rem;
 }
-.article image{
+.article__body image{
     text-align: center; 
     margin: 0;
     padding: 0;
 }
-.article figcaption{
+.article__body figcaption{
     
 }
-.article figcaption p {
+.article__body figcaption p {
     margin: 5px 0;
     font-size: 0.75rem;
     line-height: 1.4;
     color: #393939;
 }
-.article a{
+.article__body a{
     color: #5694f1;
 }
-.article blockquote{
+.article__body blockquote{
     text-align: left;
     color: #5f5f5f;
     margin: 20px; /*make it 40px on sides on desktop*/
@@ -429,18 +429,18 @@ Description: article content
     border-left: 2px solid #5f5f5f;
     
 }
-.article blockquote:before{
+.article__body blockquote:before{
     content:'\201C';
     color: #393939;
     font-size: 1.4rem;
 }
-.article blockquote:after{
+.article__body blockquote:after{
     content: '\201D';
     color: #393939;
     font-size: 1.4rem;
 }
 
-.article pre{ 
+.article__body pre{ 
 	white-space:pre-wrap;
 	padding:20px;
 	overflow:auto;
@@ -449,58 +449,64 @@ Description: article content
 	  font-family: 'Source Code Pro',Menlo,monospace; /*TODO add source code pro*/
 	  font-size: 14px;
 	  line-height: 1.5em;
-	  font-weight: 500;
-	color: #d0d4d7;
+      font-weight: 500;
+    color: #d0d4d7;
+    
+    /* full width */
+    margin: 0;
+    width: 100vw;
+    position: relative;
+    left: -1.5rem;
 }
-.article code{
+.article__body code{
     font-family:Menlo, Monaco, Courier; 
 	font-size:14px; 
 	padding: 4px; 
 	font-weight: 600;
 }
-.article li{
+.article__body li{
     padding: 5px;
 }
 /*nested lists*/
-.article ul li ul li{
+.article__body ul li ul li{
     list-style-type: square;
 }
-.article ul li ul li ul li{
+.article__body ul li ul li ul li{
     list-style-type: circle;
 }
-.article ol li ol li{
+.article__body ol li ol li{
     list-style-type: lower-alpha;
 }
-.article kbd{
+.article__body kbd{
     font-weight: 700;
     background: #272722;
     color: #d0d4d7;
     padding: 3px;
     border-radius: 3px;
 }
-.article svg{
+.article__body svg{
     max-width: 100%;
 }
-.article table{
+.article__body table{
     width: 100%;
     max-width: 600px;
     margin: 30px auto; /*Todo make it 40px or more on deskotp*/
     border-collapse: collapse;
     font-size: 1rem;
 }
-.article td{
+.article__body td{
     text-align: left;
     border: 1px solid #5f5f5f;
     padding: 10px;
 }
-.article th,
-.article tfoot td{
+.article__body th,
+.article__body tfoot td{
     text-align: center;
     border: 1px solid #5f5f5f;
     color: #393939;
     padding: 10px;
 }
-.article table caption{
+.article__body table caption{
     color: #393939;
     margin: 10px auto;
 }
