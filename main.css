@@ -71,13 +71,18 @@ Description: site navigation links
     margin: 0;
     list-style: none;
     font-weight: 700;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: none;
+    grid-template-columns: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    -webkit-justify-content: end;
+    justify-content: end;
+    grid-column-gap: 20px;
+    /*TODO use modernizr and add a float and padding fallback*/
 }
 .nav__item{
-
 }
 .nav__item--noneOnPage{
     display: none;
@@ -99,10 +104,6 @@ Description: site navigation links
     text-decoration: none;
     color: inherit;
     text-align: right;
-    padding: 0 0.625rem;
-}
-.nav__link--noPadR{ /*TODO no need for this when using flex*/
-    padding-right: 0;
 }
 .nav__link:hover,
 .nav__link:visited,
@@ -327,6 +328,13 @@ Description: article content
     font-family: 'PT Sans', sans-serif;
     color: #5f5f5f;
 }
+
+/* 
+not exactly following specificiy rules of BEM within article components
+but it is better to manage all article components the user
+might input manually or a templating engine
+will add from a markdown file.
+*/
 .article__body h1,
 .article__body h2,
 .article__body h3,
