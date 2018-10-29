@@ -1,13 +1,20 @@
+/*
+Breakpoints:
+Default - Mobile
+> 600px - mobile landscape (make sure or swithch to 700px)
+> 960px - 
+> 1024 - ipad landscape
+> 1200 - laptop
+> 1900 - FHD
+*/
+
+
+/* General styles */
 *{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
 html{
     font-size: 16px;
 }
@@ -18,41 +25,38 @@ html,body{
 html, body, .wrapper{
     min-height: 100vh;
 }
-
 body{
     color: black;
     font-family: 'Fira Mono', monospace;
-    /* overflow: hidden; */
 }
 img{
     width: 100%;
 }
-
 .wrapper{ /* todo rename to container*/
     margin: 0 auto;
-    width: 100vw;
-    max-width: 60rem; /*TODO change for desktop*/
-    /* padding: 0 1.5rem; */
-
+    width: 98vw; /*to avoid chrome 100vw bug (horizontal scrollbar)*/
+    max-width: 80rem; /*60rem*/
     display: -ms-grid;
     display: grid;
     grid-template-columns: none;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto auto;
     justify-items: stretch;
-    /* grid-template-areas:
-    "navigation"
-    "profile"
-    "footer"; */
-    
 }
-.wrapper *{
-    /* max-width: 100%; */
-}
-
-.innerWrapper{ /*Todo add to all html pages */
+.innerWrapper{
     padding: 0 1.5rem;
     max-width: 100vw;
 }
+@media screen and (min-width:600px){
+    .innerWrapper{
+        padding: 0 3rem;
+    }
+}
+@media screen and (min-width:960px){
+    .wrapper.--homepage{
+        grid-template-rows: auto 1fr 1fr auto;
+    }
+}
+
 
 /* 
 Block Name: .nav block
@@ -83,20 +87,16 @@ Description: site navigation links
     /*TODO use modernizr and add a float and padding fallback*/
 }
 .nav__item{
+
 }
 .nav__item--noneOnPage{
     display: none;
 }
-.nav__item--displayOnTablet{
+.nav__item.--displayOnTablet{
     display: none;
 }
-.nav__item--displayOnMobile{
+.nav__item.--displayOnMobile{
     display: inline;
-}
-@media screen and (min-width: 900px){ /*TODO decide on media queries sizes*/
-    .nav__item--displayOnTablet{
-        display: inline;
-    }
 }
 .nav__link{
     width: 100%;
@@ -105,11 +105,20 @@ Description: site navigation links
     color: inherit;
     text-align: right;
 }
-.nav__link:hover,
+.nav__link:hover{
+    color: inherit;
+    /* text-decoration: underline; */
+    text-decoration: none;
+}
 .nav__link:visited,
 .nav__link:clicked{
     color: inherit;
     text-decoration: none;
+}
+@media screen and (min-width: 600px){
+    .nav__item.--displayOnTablet{
+        display: initial;
+    }
 }
 
 
@@ -132,7 +141,6 @@ Description: homepage profile
 
     display: -ms-grid;
     display: grid;
-    /* grid-template-rows: 20% max-content max-content max-content max-content max-content 1fr; */
     grid-template-rows: repeat(5, max-content);
     align-content: center;
     grid-template-columns: none;
@@ -198,7 +206,7 @@ Description: homepage profile
     /* width: 35vw; could be an idea?*/
     grid-row: 4/5;
     grid-column: 1/2;
-    margin: 2.1875rem auto;
+    margin: 8vh auto 1.875rem auto;
 }
 .profile__email{
     color:inherit;
@@ -213,13 +221,42 @@ Description: homepage profile
 .profile__email:visited{
     color: inherit;
 }
+@media screen and (orientation:landscape) and (max-height:400px){
+    /*Target: mobile on landscape with small height*/
+    .profile__socialList{
+        margin: 20px auto;
+    }
+    .profile__seperator{
+        display: none;
+    }
+    .profile__email{
+        margin: 10px auto;
+    }
+}
+
+@media screen and (min-width:960px){
+    .profile{
+        align-self: end;
+        height: max-content;
+    }
+    .profile__title{
+        font-size: 2rem;
+    }
+    .profile__seperator{
+        display: none;
+    }
+    .profile__socialList{
+        margin: 1.875rem auto;
+    }
+}
+
 
 /* 
 Block Name: .footer block
 Description: website footer
 */
 .footer{
-    grid-row: 3/4;
+    grid-row: 4/5;
 }
 .footer__text{
     text-align: center;
@@ -231,17 +268,27 @@ Description: website footer
     margin: 0.625rem 0;
 }
 
+
 /* 
 Block Name: blog
 Description: blogs posts
 */
 .blog{
     text-align: left;
-    margin: 1.5625rem 0;
+    margin: 3.125rem 0;
     grid-row: 2/3;
 }
+.blog.--brief{
+    display: none;
+}
 .blog__title{
+    font-weight: 700;
+    letter-spacing: 0.1875rem;
+    font-size: 1.625rem;
+    text-transform: uppercase;
     margin: 0;
+    line-height: 1.5em;
+    word-spacing: -0.5rem;
 }
 .blog__seperator{
     border: none;
@@ -252,7 +299,7 @@ Description: blogs posts
 }
 .blog__postList{
     padding: 0;
-    margin: 1.25rem 0 0 0;
+    margin: 1.25rem 0 0 0; /*why*/
     list-style: none;
 }
 .blog__postItem{
@@ -265,6 +312,7 @@ Description: blogs posts
     color: inherit;
     text-decoration: none;
     display: block;
+    width: 100%;
     padding: 1rem 0;
 }
 .blog__postLink:hover,
@@ -272,28 +320,89 @@ Description: blogs posts
     color: inherit;
     text-decoration: none;
 }
-.blog__postLink:hover{
-    /*TODO hover effect*/
+.blog__postLink:hover .blog__postTitle{
+    text-decoration: underline;
+}
+.blog__postTitle{
+
 }
 .blog__postDate{
-    display: block; /*will change to inline-block with margins in desktop view*/
+    display: block;
     color: #848484;
     font-weight: 400;
     font-size: 0.875rem;
 }
+.blog__briefMoreLink{
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.0031rem;
+    line-height: 1.5em;
+    display: block;
+    text-align: center;
+    width: max-content;
+    margin: 20px auto;
+    text-decoration: underline;
+    color: inherit;
+}
+.blog__briefMoreLink:hover,
+.blog__briefMoreLink:visited{
+    text-decoration: underline;
+    color: inherit;
+}
+@media screen and (min-width:960px){
+    .blog.--brief{
+        display: block;
+        margin: 0 0 30px 0;
+        grid-row: 3/4;
 
+        font-size: .7rem;
+    }
+    .blog.--brief .blog__postList{
+        margin: 50px 0 40px 0;
+    }
+    .blog.--brief .blog__postItem{
+        font-size: .8rem;
+    }
+    .blog.--brief .blog__postLink{
+        padding: 1rem 0;
+    }
 
-/*are psedo classes modifiers?*/
-/* TODO article components (back to canvas)*/
+    .blog__title{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .blog__seperator{
+        margin: 20px auto;
+    }
+    .blog__postList{
+        margin: 1.25rem auto;
+    }
+    .blog__postLink{
+        padding: 1.4rem 0;
+    }
+    .blog__postTitle{
+        float: left;
+        padding: 0 10px;
+        width: 50%;
+    }
+    .blog__postDate{
+        display: inline;
+        float: left;
+        padding: 0 10px;
+        min-width: 150px;
+        width: 50%;
+        text-align: right;
+    }
+}
+
 
 /* 
 Block Name: article
-Description: article content
+Description: article section
 */
 .article{
     text-align: left;
     margin: 50px 0;
-    /* padding-right: 1.875rem; */
     grid-row: 2/3;
 }
 .article__head{
@@ -329,6 +438,8 @@ Description: article content
     color: #5f5f5f;
 }
 
+
+/* Article Components */
 /* 
 not exactly following specificiy rules of BEM within article components
 but it is better to manage all article components the user
@@ -342,6 +453,7 @@ will add from a markdown file.
 .article__body h5,
 .article__body h6{
     margin: 20px 0 0 0;
+    color: #393939;
 }
 
 .article__body h1{
@@ -359,53 +471,44 @@ will add from a markdown file.
 }
 .article__body h3{
     font-weight: 700;
-    color: #393939;
     line-height: 1.2em;
     font-size: 1.4rem;
 }
 .article__body h4{
     font-size: 1.4rem;
-    color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
 .article__body h5{
     font-size: 1.2rem;
-    color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
 .article__body h6{
     font-size: 1rem;
-    color: #393939;
     line-height: 1.2em;
     font-weight: 400;
 }
-.article__body > p{
-    /* to exclude paragraphs under figures or other types. */
+.article__body > p{ /* to exclude paragraphs under figures or other types. */
     line-height: 1.5625rem;
     font-size: 1rem;
     color: #5f5f5f;
     font-weight: 400;
-    margin: 1.25rem 0;
+    margin: 1.25rem auto;
     padding-right: 1.875rem;
 }
 .article__body strong{
     color: #393939;
 }
-.article__body i{
-    color: #393939; /*not sure about this*/
-}
 .article__body hr{
     border: none;
     height: 1px;
     background-color: #939393;
-    width: 11.875rem; /* TODO make it taller on laptop*/
+    width: 11.875rem;
     margin: 1.875rem auto;
 }
 .article__body figure{
     text-align: center; 
-    /* margin: 0 0 0 30px; */
     padding: 0;
 
     /* full width */
@@ -413,8 +516,6 @@ will add from a markdown file.
     width: 100vw;
     position: relative;
     left: -1.5rem;
-
-    /*TODO make it smaller on desktop*/
 }
 .article__body image{
     text-align: center; 
@@ -436,7 +537,7 @@ will add from a markdown file.
 .article__body blockquote{
     text-align: left;
     color: #5f5f5f;
-    margin: 20px; /*make it 40px on sides on desktop*/
+    margin: 20px;
     padding-left: 20px;
     border-left: 2px solid #5f5f5f;
     
@@ -502,7 +603,7 @@ will add from a markdown file.
 .article__body table{
     width: 100%;
     max-width: 600px;
-    margin: 30px auto; /*Todo make it 40px or more on deskotp*/
+    margin: 30px auto;
     border-collapse: collapse;
     font-size: 1rem;
 }
@@ -522,45 +623,62 @@ will add from a markdown file.
     color: #393939;
     margin: 10px auto;
 }
-
-
-
-/*------ Start Page Specific Styles -------*/
-
-/*------ End Page Specific Styles -------*/
-
-/*------ Start Responsive Styles -------*/
-
-/* #main_nav .nav_links li a:hover{
-    text-decoration: underline;
-} */
-
-@media screen and (orientation:landscape){
-    /*TODO: check that in works only on mobile landscape*/
-    .profile__socialList{
-        margin: 1.875rem auto;
+@media screen and (min-width:600px){
+    .article__head{
+        text-align: center;
     }
-    .profile__seperator{
-        margin: 0 auto 1.875rem auto;
+    .article__title{
+        padding: 0;
+    }
+    .article__seperator{
+        margin: 10px auto;
+    }
+    .article__body{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .article__body > p{
+        padding: 0;
+    }
+    .article__body figure{
+        width: 100%;
+        left: 0rem;
+    }
+    .article__body pre{
+        width: 100%;
+        left: 0rem;
+    }
+}
+@media screen and (min-width:960px){
+    .article__title{
+        font-size: 2rem;
+    }
+    .article__seperator{
+        width: 17.5rem;
+        margin: 30px auto;
+    }
+    .article__body{
+        max-width: 680px;
+        margin: 0 auto;
+    }
+    /* Article Components */
+    .article__body hr{
+        width: 17.5rem;
+        margin: 50px auto;
+    }
+    .article__body figure{
+        margin: 2.5rem 0;
+    }
+    .article__body table{
+        margin: 40px auto;
+    }
+    .article__body blockquote{
+        margin: 40px;
     }
 }
 
-/*------ End Responsive Styles -------*/
 
-
-/* TODO 
-    - fix homepage space between title and subtitle
-article: 
-    lists (ol / ul)
-    h4
-    article figures and code blocks should take full width (step on the right padding)
-
-
-Before Release:
-    - convert all px to rem (exceprt hr height 1px)
-    - add links and mailto
-    - check comments
-    
-    - add code highlighting
-    - add figure openning and zomming
-*/
+/* 
+2- desktop responsiveness (new commit)
+3- make place for footer credits
+4- continue adding all features then testing */
