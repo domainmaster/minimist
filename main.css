@@ -1,14 +1,3 @@
-/*
-Breakpoints:
-Default - Mobile
-> 600px - mobile landscape (make sure or swithch to 700px)
-> 960px - 
-> 1024 - ipad landscape
-> 1200 - laptop
-> 1900 - FHD
-*/
-
-
 /* General styles */
 *{
     box-sizing: border-box;
@@ -35,7 +24,7 @@ img{
 .wrapper{ /* todo rename to container*/
     margin: 0 auto;
     width: 98vw; /*to avoid chrome 100vw bug (horizontal scrollbar)*/
-    max-width: 80rem; /*60rem*/
+    max-width: 80rem;
     display: -ms-grid;
     display: grid;
     grid-template-columns: none;
@@ -69,6 +58,7 @@ Description: site navigation links
     letter-spacing: 0.0031rem;
     text-align: center;
     grid-row: 1/2;
+    float: right;
 }
 .nav__row{
     padding: 0;
@@ -107,8 +97,7 @@ Description: site navigation links
 }
 .nav__link:hover{
     color: inherit;
-    /* text-decoration: underline; */
-    text-decoration: none;
+    text-decoration: underline;
 }
 .nav__link:visited,
 .nav__link:clicked{
@@ -127,7 +116,30 @@ Block Name: .headerTitle block
 Description: site's title
 */
 .headerTitle{
+    font-family: 'Fira Mono', monospace;
     font-weight: 700;
+    font-size: .94rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0031rem;
+    text-align: center;
+    margin: 1.25rem 0;
+    width: max-content;
+    display: none;
+}
+.headerTitle__link{
+    text-decoration: none;
+    color: inherit;
+}
+.headerTitle__link:hover,
+.headerTitle__link:visited{
+    color: inherit;
+    text-decoration: none;
+}
+@media screen and (min-width:960px){
+    .headerTitle{
+        display: inline-block;
+    }
 }
 
 /* 
@@ -152,7 +164,7 @@ Description: homepage profile
     letter-spacing: 0.1875rem;
     font-size: 1.625rem;
     text-transform: uppercase;
-    margin: 0 0 0.625rem 0; /*1.5625rem*/
+    margin: 0 0 0.625rem 0;
     grid-row: 1/2;
     grid-column: 1/2;
     line-height: 1.8em;
@@ -203,14 +215,13 @@ Description: homepage profile
     height: 1px;
     background-color: #939393;
     width: 7.875rem;
-    /* width: 35vw; could be an idea?*/
     grid-row: 4/5;
     grid-column: 1/2;
     margin: 8vh auto 1.875rem auto;
 }
 .profile__email{
     color:inherit;
-    font-size: .75rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1113rem;
     text-decoration: underline;
     font-weight: 700;
@@ -233,7 +244,6 @@ Description: homepage profile
         margin: 10px auto;
     }
 }
-
 @media screen and (min-width:960px){
     .profile{
         align-self: end;
@@ -533,6 +543,12 @@ will add from a markdown file.
 }
 .article__body a{
     color: #5694f1;
+    text-decoration: none;
+}
+.article__body a:hover,
+.article__body a:visited{
+    color: #5694f1;
+    text-decoration: none;
 }
 .article__body blockquote{
     text-align: left;
@@ -679,6 +695,5 @@ will add from a markdown file.
 
 
 /* 
-2- desktop responsiveness (new commit)
 3- make place for footer credits
 4- continue adding all features then testing */
