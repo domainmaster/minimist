@@ -21,6 +21,10 @@ body{
 img{
     width: 100%;
 }
+a{
+    color: inherit;
+    text-decoration: none;
+}
 .wrapper{ /* todo rename to container*/
     margin: 0 auto;
     width: 98vw; /*to avoid chrome 100vw bug (horizontal scrollbar)*/
@@ -276,6 +280,11 @@ Description: website footer
     color: #939393;
     letter-spacing: 0.0031rem;
     margin: 0.625rem 0;
+}
+@media screen and (min-width:1600px){
+    .footer__text{
+        font-size: .6rem;
+    }
 }
 
 
@@ -692,8 +701,3 @@ will add from a markdown file.
         margin: 40px;
     }
 }
-
-
-/* 
-3- make place for footer credits
-4- continue adding all features then testing */
