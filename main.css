@@ -5,7 +5,7 @@
     -moz-box-sizing: border-box;
 }
 html{
-    font-size: 16px;
+    font-size: 1rem;
 }
 html,body{
     padding: 0;
@@ -56,7 +56,7 @@ Block Name: .nav block
 Description: site navigation links
 */
 .nav{
-    font-size: .94rem;
+    font-size: 0.94rem;
     margin: 1.25rem 0;
     text-transform: uppercase;
     letter-spacing: 0.0031rem;
@@ -77,7 +77,7 @@ Description: site navigation links
     grid-auto-flow: column;
     -webkit-justify-content: end;
     justify-content: end;
-    grid-column-gap: 20px;
+    grid-column-gap: 1.25rem;
     /*TODO use modernizr and add a float and padding fallback*/
 }
 .nav__item{
@@ -122,7 +122,7 @@ Description: site's title
 .headerTitle{
     font-family: 'Fira Mono', monospace;
     font-weight: 700;
-    font-size: .94rem;
+    font-size: 0.94rem;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.0031rem;
@@ -239,13 +239,13 @@ Description: homepage profile
 @media screen and (orientation:landscape) and (max-height:400px){
     /*Target: mobile on landscape with small height*/
     .profile__socialList{
-        margin: 20px auto;
+        margin: 1.25rem auto;
     }
     .profile__seperator{
         display: none;
     }
     .profile__email{
-        margin: 10px auto;
+        margin: 0.625rem auto;
     }
 }
 @media screen and (min-width:960px){
@@ -274,7 +274,7 @@ Description: website footer
 }
 .footer__text{
     text-align: center;
-    font-size: .5rem;
+    font-size: 0.5rem;
     font-weight: 500;
     text-transform: uppercase;
     color: #939393;
@@ -283,7 +283,7 @@ Description: website footer
 }
 @media screen and (min-width:1600px){
     .footer__text{
-        font-size: .6rem;
+        font-size: 0.6rem;
     }
 }
 
@@ -314,7 +314,7 @@ Description: blogs posts
     height: 1px;
     background-color: #939393;
     width: 5.625rem;
-    margin: 10px 0;
+    margin: 0.625rem 0;
 }
 .blog__postList{
     padding: 0;
@@ -359,7 +359,7 @@ Description: blogs posts
     display: block;
     text-align: center;
     width: max-content;
-    margin: 20px auto;
+    margin: 1.25rem auto;
     text-decoration: underline;
     color: inherit;
 }
@@ -371,16 +371,16 @@ Description: blogs posts
 @media screen and (min-width:960px){
     .blog.--brief{
         display: block;
-        margin: 0 0 30px 0;
+        margin: 0 0 1.875rem 0;
         grid-row: 3/4;
 
-        font-size: .7rem;
+        font-size: 0.7rem;
     }
     .blog.--brief .blog__postList{
-        margin: 50px 0 40px 0;
+        margin: 3.125rem 0 2.5rem 0;
     }
     .blog.--brief .blog__postItem{
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .blog.--brief .blog__postLink{
         padding: 1rem 0;
@@ -391,7 +391,7 @@ Description: blogs posts
         font-size: 2rem;
     }
     .blog__seperator{
-        margin: 20px auto;
+        margin: 1.25rem auto;
     }
     .blog__postList{
         margin: 1.25rem auto;
@@ -401,14 +401,14 @@ Description: blogs posts
     }
     .blog__postTitle{
         float: left;
-        padding: 0 10px;
+        padding: 0 0.625rem;
         width: 50%;
     }
     .blog__postDate{
         display: inline;
         float: left;
-        padding: 0 10px;
-        min-width: 150px;
+        padding: 0 0.625rem;
+        min-width: 9.375rem;
         width: 50%;
         text-align: right;
     }
@@ -421,7 +421,7 @@ Description: article section
 */
 .article{
     text-align: left;
-    margin: 50px 0;
+    margin: 3.125rem 0;
     grid-row: 2/3;
 }
 .article__head{
@@ -449,7 +449,7 @@ Description: article section
     height: 1px;
     background-color: #939393;
     width: 5.625rem;
-    margin: 10px 0;
+    margin: 0.625rem 0;
 }
 .article__body{
     margin-top: 2.5rem;
@@ -471,7 +471,7 @@ will add from a markdown file.
 .article__body h4,
 .article__body h5,
 .article__body h6{
-    margin: 20px 0 0 0;
+    margin: 1.25rem 0 0 0;
     color: #393939;
 }
 
@@ -479,14 +479,14 @@ will add from a markdown file.
     font-weight: 700;
     font-size: 2rem;
     line-height: 1.5em;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
     text-transform: uppercase;
 }
 .article__body h2{
     font-weight: 700;
     font-size: 1.6rem;  
     line-height: 1.2em;  
-    letter-spacing: 1px;
+    letter-spacing: 0.0625rem;
 }
 .article__body h3{
     font-weight: 700;
@@ -545,7 +545,7 @@ will add from a markdown file.
     
 }
 .article__body figcaption p {
-    margin: 5px 0;
+    margin: 0.3125rem 0;
     font-size: 0.75rem;
     line-height: 1.4;
     color: #393939;
@@ -562,9 +562,9 @@ will add from a markdown file.
 .article__body blockquote{
     text-align: left;
     color: #5f5f5f;
-    margin: 20px;
-    padding-left: 20px;
-    border-left: 2px solid #5f5f5f;
+    margin: 1.25rem;
+    padding-left: 1.25rem;
+    border-left: 0.125rem solid #5f5f5f;
     
 }
 .article__body blockquote:before{
@@ -580,12 +580,12 @@ will add from a markdown file.
 
 .article__body pre{ 
 	white-space:pre-wrap;
-	padding:20px;
+	padding:1.25rem;
 	overflow:auto;
-	border-radius: 3px;
+	border-radius: 0.1875rem;
 	background: #272722;
 	  font-family: 'Source Code Pro',Menlo,monospace; /*TODO add source code pro*/
-	  font-size: 14px;
+	  font-size: 0.875rem;
 	  line-height: 1.5em;
       font-weight: 500;
     color: #d0d4d7;
@@ -598,12 +598,12 @@ will add from a markdown file.
 }
 .article__body code{
     font-family:Menlo, Monaco, Courier; 
-	font-size:14px; 
-	padding: 4px; 
+	font-size:0.875rem; 
+	padding: 0.25rem; 
 	font-weight: 600;
 }
 .article__body li{
-    padding: 5px;
+    padding: 0.3125rem;
 }
 /*nested lists*/
 .article__body ul li ul li{
@@ -619,34 +619,34 @@ will add from a markdown file.
     font-weight: 700;
     background: #272722;
     color: #d0d4d7;
-    padding: 3px;
-    border-radius: 3px;
+    padding: 0.1875rem;
+    border-radius: 0.1875rem;
 }
 .article__body svg{
     max-width: 100%;
 }
 .article__body table{
     width: 100%;
-    max-width: 600px;
-    margin: 30px auto;
+    max-width: 37.5rem;
+    margin: 1.875rem auto;
     border-collapse: collapse;
     font-size: 1rem;
 }
 .article__body td{
     text-align: left;
-    border: 1px solid #5f5f5f;
-    padding: 10px;
+    border: 0.0625rem solid #5f5f5f;
+    padding: 0.625rem;
 }
 .article__body th,
 .article__body tfoot td{
     text-align: center;
-    border: 1px solid #5f5f5f;
+    border: 0.0625rem solid #5f5f5f;
     color: #393939;
-    padding: 10px;
+    padding: 0.625rem;
 }
 .article__body table caption{
     color: #393939;
-    margin: 10px auto;
+    margin: 0.625rem auto;
 }
 @media screen and (min-width:600px){
     .article__head{
@@ -656,10 +656,10 @@ will add from a markdown file.
         padding: 0;
     }
     .article__seperator{
-        margin: 10px auto;
+        margin: 0.625rem auto;
     }
     .article__body{
-        max-width: 500px;
+        max-width: 31.25rem;
         margin: 0 auto;
     }
     .article__body > p{
@@ -680,24 +680,24 @@ will add from a markdown file.
     }
     .article__seperator{
         width: 17.5rem;
-        margin: 30px auto;
+        margin: 1.875rem auto;
     }
     .article__body{
-        max-width: 680px;
+        max-width: 42.5rem;
         margin: 0 auto;
     }
     /* Article Components */
     .article__body hr{
         width: 17.5rem;
-        margin: 50px auto;
+        margin: 3.125rem auto;
     }
     .article__body figure{
         margin: 2.5rem 0;
     }
     .article__body table{
-        margin: 40px auto;
+        margin: 2.5rem auto;
     }
     .article__body blockquote{
-        margin: 40px;
+        margin: 2.5rem;
     }
 }
