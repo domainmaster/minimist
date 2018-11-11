@@ -1,0 +1,37 @@
+baseURL = "http://mshjri.com/"
+languageCode = "en-us"
+title = "Omar Al-Mashjari"
+theme = "minimist"
+
+copyright = "Copyright © 2018, Omar AlMashjari; all rights reserved."
+
+[params]
+    websiteTitle = "Omar Almashjari" # used on homepage and navigation
+    Description = "Front End Web Developer."
+    email = "omar.mshjri@gmail.com"
+
+
+    #showHomepageBrief
+    
+    
+    # footer
+    showMinimistLink = true
+
+
+# navigation links
+# [ [name, URL ], [hideOnMobile (<600px), hideOnItsOwnPage] ],
+# todo hideItsOwnPage: discription and hide on mobile
+[[params.navigation]]
+    nav = [
+        [ [ "Home", "/"], [false, true] ], # todo test the / if not then create and if statement and .baseurl 
+        [ [ "Portfolio", "https://portfolio.mshjri.com"], [false, true] ],
+        [ [ "Blog", "/blog/"], [false, true] ],
+        [ [ "About", "/about/"], [false, true] ],
+        [ [ "RSS", ""], [true, true] ], # rss url will be provided by default
+        #add more links if needed
+    ]
+
+[social]
+    Github = "https://github.com/codezarsenal"
+    Medium = "https://medium.com/@codezarsenal"
+    Twitter = "https://twitter.com/mshjrii"

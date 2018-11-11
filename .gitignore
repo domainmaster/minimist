@@ -3,9 +3,11 @@
 
 ### Hugo ###
 # Hugo binary
-hugo*
+
+# hugo*
 
 # Generated files at default location
+hugo-minimist/public/
 /public/
 /resources/_gen
 

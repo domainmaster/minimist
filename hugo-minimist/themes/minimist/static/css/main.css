@@ -87,14 +87,11 @@ Description: site navigation links
 .nav__item{
 
 }
-.nav__item--noneOnPage{
+.nav__item.--noneOnPage{
     display: none;
 }
 .nav__item.--displayOnTablet{
     display: none;
-}
-.nav__item.--displayOnMobile{
-    display: inline;
 }
 .nav__link{
     width: 100%;

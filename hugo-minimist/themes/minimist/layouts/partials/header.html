@@ -1,0 +1,48 @@
+<header>
+    <div class="innerWrapper">
+        <div class="headerTitle"><a class="headerTitle__link" href="index.html">{{ .Site.Params.websiteTitle }}</a></div>
+        <nav class="nav">
+            <ul class="nav__row">
+
+                <!-- <li class="nav__item --noneOnPage"><a class="nav__link" href="index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
+                <li class="nav__item"><a class="nav__link" href="blog.html">Blog</a></li>
+                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                <li class="nav__item --displayOnTablet"><a class="nav__link" href="{{ .Site.RSSLink }}">RSS</a></li> -->
+                
+                {{ $rssLink := .Site.RSSLink }}
+
+                {{/* TODO comeback to this after implementing blog page
+                    {{ with $mpage := .GetPage "." }} {{ println .URL }} {{ end }}
+                    {{ if $hideOnItsOwnPage }} --noneOnPage {{ end }}
+                */}}
+
+                {{ with $data := .Site.Params.navigation }}
+                    {{ range $data }}
+                        {{ range $link := .nav }}
+
+                            {{ $key := index $link 0 0 }}
+                            {{ $url := index $link 0 1 }}
+                            {{ $hideOnMobile := index $link 1 0}}
+                            {{ $hideOnItsOwnPage := index $link 1 1 }}
+                            
+
+                            <li class="nav__item
+                            {{ if $hideOnMobile }} --displayOnTablet {{ end }}
+                            "><a class="nav__link"
+                                {{if or (eq $key "RSS") (eq $key "rss")  }}
+                                    href="{{ $rssLink }}"
+                                {{ else }}
+                                    href="{{ $url }}"
+                                {{ end }}
+                                
+                            >{{ $key }}</a></li>
+                            
+                        {{ end }}
+                    {{ end }}
+                {{ end }}                
+
+            </ul>
+        </nav>
+    </div>
+</header>
