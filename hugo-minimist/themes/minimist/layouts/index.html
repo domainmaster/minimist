@@ -9,29 +9,9 @@
         
         {{ partial "profile.html" . }}
         
-        <section class="blog --brief">
-            <div class="innerWrapper">
-                <ul class="blog__postList">
-                    <li class="blog__postItem"><a class="blog__postLink" href="#">
-                        <time datetime="2018-1-6" class="blog__postDate">January 6, 2018</time>
-                        <span class="blog__postTitle">On Writing</span>
-                    </a></li>
-                    <li class="blog__postItem"><a class="blog__postLink" href="#">
-                        <time datetime="2017-8-15" class="blog__postDate">Augest 15, 2017</time>
-                        <span class="blog__postTitle">Deploying Hugo Website Using RSync</span>
-                    </a></li>
-                    <li class="blog__postItem"><a class="blog__postLink" href="article.html">
-                        <time datetime="2017-8-15" class="blog__postDate">July 31, 2017</time>
-                        <span class="blog__postTitle">Thoughts on Maslow’s Heirarchy of Needs</span>
-                    </a></li>
-                    <li class="blog__postItem"><a class="blog__postLink" href="#">
-                        <time datetime="2017-8-15" class="blog__postDate">July 29, 2017</time>
-                        <span class="blog__postTitle">First Post &amp; Hugo Site Generator</span>
-                    </a></li>
-                </ul>
-                <a class="blog__briefMoreLink" href="blog.html">More</a>
-            </div>
-        </section>
+        {{ if .Site.Params.enableHomepageBlogBrief }}
+            {{ partial "blog/blog-list.html" . }}
+        {{ end }}
 
 
         {{ partial "footer.html" . }}

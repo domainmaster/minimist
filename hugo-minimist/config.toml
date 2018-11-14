@@ -13,8 +13,8 @@ pluralizeListTitles = false
     email = "omar.mshjri@gmail.com"
 
 
-    #showHomepageBrief
-    
+    enableHomepageBlogBrief = true
+    numberOfBriefLinks = 4
     
     # footer
     showMinimistLink = true

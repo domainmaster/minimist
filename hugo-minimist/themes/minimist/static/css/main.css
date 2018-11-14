@@ -363,7 +363,7 @@ Description: blogs posts
     font-weight: 500;
     letter-spacing: 0.0031rem;
     line-height: 1.5em;
-    display: block;
+    display: none;
     text-align: center;
     width: max-content;
     margin: 1.25rem auto;
@@ -382,6 +382,13 @@ Description: blogs posts
         grid-row: 3/4;
 
         font-size: 0.7rem;
+    }
+    .blog.--brief .blog__title,
+    .blog.--brief .blog__seperator{
+        display: none;
+    }
+    .blog.--brief .blog__briefMoreLink{
+        display: block;
     }
     .blog.--brief .blog__postList{
         margin: 3.125rem 0 2.5rem 0;
