@@ -5,6 +5,8 @@ theme = "minimist"
 
 copyright = "Copyright © 2018, Omar AlMashjari; all rights reserved."
 
+pluralizeListTitles = false
+
 [params]
     websiteTitle = "Omar Almashjari" # used on homepage and navigation
     Description = "Front End Web Developer."
