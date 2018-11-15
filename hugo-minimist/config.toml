@@ -1,4 +1,4 @@
-baseURL = "http://mshjri.com/"
+baseURL = "//mshjri.com"
 languageCode = "en-us"
 title = "Omar Al-Mashjari"
 theme = "minimist"
