@@ -21,13 +21,14 @@ pluralizeListTitles = false
 
 
 # navigation links
-# [ [name, URL ], [hideOnMobile (<600px), hideOnItsOwnPage] ],
-# todo hideItsOwnPage: discription and hide on mobile
+# [ [name, URL ], [hideOnMobile, hideOnItsOwnPage] ],
+# hideOnMobile: will hide the link on screens smaller than 600px wide
+# hideItsOwnPage: will hide the navigation link for a page on the page itself (ex: hide 'about' link on the about page) 
 [[params.navigation]]
     nav = [
         [ [ "Home", "/"], [false, true] ], # todo test the / if not then create and if statement and .baseurl 
         [ [ "Portfolio", "https://portfolio.mshjri.com"], [false, true] ],
-        [ [ "Blog", "/blog/"], [false, true] ],
+        [ [ "Blog", "/blog/"], [false, false] ],
         [ [ "About", "/about/"], [false, true] ],
         [ [ "RSS", ""], [true, true] ], # rss url will be provided by default
         #add more links if needed

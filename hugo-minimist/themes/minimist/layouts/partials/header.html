@@ -4,56 +4,35 @@
         <nav class="nav">
             <ul class="nav__row">
 
-                <!-- index.html -->
-                <!-- <li class="nav__item --noneOnPage"><a class="nav__link" href="index.html">Home</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
-                <li class="nav__item"><a class="nav__link" href="blog.html">Blog</a></li>
-                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
-                <li class="nav__item --displayOnTablet"><a class="nav__link" href="{{ .Site.RSSLink }}">RSS</a></li> -->
-                
-                <!-- blog.html -->
-                <!-- <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
-                <li class="nav__item nav__item--noneOnPage"><a class="nav__link" href="blog.html">Blog</a></li>
-                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">RSS</a></li> -->
-
-                <!-- article.html -->
-                <!-- <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
-                <li class="nav__item --displayOnTablet"><a class="nav__link" href="blog.html">Blog</a></li>
-                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
-                <li class="nav__item"><a class="nav__link" href="#">RSS</a></li> -->
-
-                <!-- about.html -->
-
+                <!-- Global Variables -->
                 {{ $rssLink := .Site.RSSLink }}
+                {{ $getSection := strings.ToLower .Section }}
+                {{ $isHome := .IsHome }}
 
-                {{/* TODO comeback to this after implementing blog page
-                    {{ with $mpage := .GetPage "." }} {{ println .URL }} {{ end }}
-                    {{ if $hideOnItsOwnPage }} --noneOnPage {{ end }}
-                */}}
-
+                
                 {{ with $data := .Site.Params.navigation }}
                     {{ range $data }}
                         {{ range $link := .nav }}
 
-                            {{ $key := index $link 0 0 }}
+                            {{ $section := strings.ToLower (index $link 0 0) }}
                             {{ $url := index $link 0 1 }}
                             {{ $hideOnMobile := index $link 1 0}}
                             {{ $hideOnItsOwnPage := index $link 1 1 }}
-                            
 
                             <li class="nav__item
                             {{ if $hideOnMobile }} --displayOnTablet {{ end }}
+                            {{ if $hideOnItsOwnPage }}
+                                {{ if eq $section $getSection }} --noneOnPage {{ end }} 
+                                {{ if $isHome }} {{ if eq $url "/" }} --noneOnPage {{ end }} {{ end }}
+                            {{ end }}
                             "><a class="nav__link"
-                                {{if or (eq $key "RSS") (eq $key "rss")  }}
+                                {{if or (eq $section "RSS") (eq $section "rss")  }}
                                     href="{{ $rssLink }}"
                                 {{ else }}
                                     href="{{ $url }}"
                                 {{ end }}
                                 
-                            >{{ $key }}</a></li>
+                            >{{ $section }}</a></li>
                             
                         {{ end }}
                     {{ end }}
