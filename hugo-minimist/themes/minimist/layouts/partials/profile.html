@@ -1,5 +1,5 @@
 <section class="profile">
-    <!-- profile elements already cenetered, no need for <div class="innerWrapper"></div> -->
+    {{ printf "<!-- profile elements already cenetered, no need for _innerWrapper; will mess up the current grid -->" | safeHTML}}
     <h1 class="profile__title">{{ .Site.Params.websiteTitle }}</h1>
     <h2 class="profile__subtitle">{{ .Site.Params.Description }}</h2>
 
