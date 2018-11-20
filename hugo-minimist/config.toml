@@ -16,12 +16,12 @@ pluralizeListTitles = false
     enableHomepageBlogBrief = true
     # specify a section to show links from
     # default: "" (blank), will list recent pages from all sections
-    briefSection = ""
+    briefSection = "blog"
     numberOfBriefLinks = 4
     more = "More"
     
     # footer
-    showMinimistLink = true
+    showMinimistCredits = true
 
 
 # navigation links

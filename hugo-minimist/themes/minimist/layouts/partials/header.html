@@ -3,12 +3,6 @@
         <div class="headerTitle"><a class="headerTitle__link" href="{{ "/" | relURL }}">{{ .Site.Params.websiteTitle }}</a></div>
         <nav class="nav">
             <ul class="nav__row">
-
-                <!-- Global Variables -->
-                {{ $rssLink := .Site.RSSLink }}
-                {{ $getSection := strings.ToLower .Section }}
-                {{ $isHome := .IsHome }}
-
                 
                 {{ with $data := .Site.Params.navigation }}
                     {{ range $data }}
@@ -22,12 +16,12 @@
                             <li class="nav__item
                             {{ if $hideOnMobile }} --displayOnTablet {{ end }}
                             {{ if $hideOnItsOwnPage }}
-                                {{ if eq $section $getSection }} --noneOnPage {{ end }} 
-                                {{ if $isHome }} {{ if eq $url "/" }} --noneOnPage {{ end }} {{ end }}
+                                {{ if eq $section (strings.ToLower $.Section) }} --noneOnPage {{ end }} 
+                                {{ if $.IsHome }} {{ if eq $url "/" }} --noneOnPage {{ end }} {{ end }}
                             {{ end }}
                             "><a class="nav__link"
                                 {{if or (eq $section "RSS") (eq $section "rss")  }}
-                                    href="{{ $rssLink }}"
+                                    href="{{ $.Site.RSSLink }}"
                                 {{ else }}
                                     href="{{ $url }}"
                                 {{ end }}
