@@ -1,10 +1,8 @@
 <footer class="footer">
     <div class="innerWrapper">
         <p class="footer__text">
-            {{ .Site.Copyright}}
-            {{ if .Site.Params.showMinimistCredits }}
-            Powered by <a href="#">minimist</a>.
-            {{ end }}
+            {{- .Site.Copyright -}}
+            {{- if .Site.Params.showMinimistCredits -}} Powered by <a href="#">minimist</a>.{{- end -}}
         </p>
     </div>
 </footer>

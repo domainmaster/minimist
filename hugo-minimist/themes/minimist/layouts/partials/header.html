@@ -6,27 +6,27 @@
                 
                 {{ with $data := .Site.Params.navigation }}
                     {{ range $data }}
-                        {{ range $link := .nav }}
+                        {{- range $link := .nav }}
 
-                            {{ $section := strings.ToLower (index $link 0 0) }}
+                            {{ $section := index $link 0 0 }}
                             {{ $url := index $link 0 1 }}
                             {{ $hideOnMobile := index $link 1 0}}
                             {{ $hideOnItsOwnPage := index $link 1 1 }}
 
                             <li class="nav__item
-                            {{ if $hideOnMobile }} --displayOnTablet {{ end }}
-                            {{ if $hideOnItsOwnPage }}
-                                {{ if eq $section (strings.ToLower $.Section) }} --noneOnPage {{ end }} 
-                                {{ if $.IsHome }} {{ if eq $url "/" }} --noneOnPage {{ end }} {{ end }}
-                            {{ end }}
-                            "><a class="nav__link"
-                                {{if or (eq $section "RSS") (eq $section "rss")  }}
-                                    href="{{ $.Site.RSSLink }}"
-                                {{ else }}
-                                    href="{{ $url }}"
-                                {{ end }}
-                                
-                            >{{ $section }}</a></li>
+                            {{- if $hideOnMobile }} --displayOnTablet {{ end }}
+                            {{- if $hideOnItsOwnPage }}
+                                {{- if eq ( strings.ToLower $section) (strings.ToLower $.Section) }} --noneOnPage {{- end }} 
+                                {{- if $.IsHome }} {{- if eq $url "/" }} --noneOnPage {{- end }} {{- end }}
+                            {{- end }}">
+                                <a class="nav__link"
+                                    {{- if or (eq $section "RSS") (eq $section "rss") }}
+                                        href="{{ $.Site.RSSLink }}"
+                                    {{ else }}
+                                        href="{{ $url }}"
+                                    {{- end }}
+                                >{{- $section -}}</a>
+                            </li>
                             
                         {{ end }}
                     {{ end }}
