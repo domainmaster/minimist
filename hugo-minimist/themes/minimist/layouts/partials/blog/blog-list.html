@@ -5,10 +5,15 @@
         <hr class="blog__seperator">
         
         <ul class="blog__postList">
-            
             {{ if .IsHome }}
-                {{ range first .Site.Params.numberOfBriefLinks .Pages }}
-                    {{ partial "blog/blog-item.html" . }}
+                {{ if eq .Site.Params.briefSection ""}}
+                    {{ range first .Site.Params.numberOfBriefLinks .Pages }}
+                        {{ partial "blog/blog-item.html" . }}
+                    {{ end }}
+                {{ else }}
+                    {{ range first .Site.Params.numberOfBriefLinks (where .Data.Pages "Type" .Site.Params.briefSection) }}
+                        {{ partial "blog/blog-item.html" . }}
+                    {{ end }}
                 {{ end }}
             {{ else }}
                 {{ range .Pages }}
@@ -17,8 +22,6 @@
             {{ end }}
             
         </ul>
-        <a class="blog__briefMoreLink" href=" {{ "blog.html" | relURL }}">More</a>
-        <!-- TODO isnt using blog.html in the href considered hard coding?
-        Fix the href and make "more" optional in the config  -->
+        <a class="blog__briefMoreLink" href=" {{ .Site.Params.briefSection | default (index .Site.Sections 0).Type }}">{{ .Site.Params.more }}</a>
     </div>
 </section>
