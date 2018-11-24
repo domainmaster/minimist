@@ -13,10 +13,9 @@ pluralizeListTitles = false
     email = "omar.mshjri@gmail.com"
 
 
+    # Homepage brief
     enableHomepageBlogBrief = true
-    # specify a section to show links from
-    # default: "" (blank), will list recent pages from all sections
-    briefSection = "blog"
+    briefSection = "blog" # specify a section to show links from (default: "" (blank), will list recent pages from all sections)
     numberOfBriefLinks = 4
     more = "More"
     
@@ -24,18 +23,18 @@ pluralizeListTitles = false
     showMinimistCredits = true
 
 
-# navigation links
-# [ [name, URL ], [hideOnMobile, hideOnItsOwnPage] ],
-# hideOnMobile: will hide the link on screens smaller than 600px wide
-# hideItsOwnPage: will hide the navigation link for a page on the page itself (ex: hide 'about' link on the about page) 
 [[params.navigation]]
+# navigation links
+# [ [name, URL ], [hideOnMobile, hideOnItsOwnPage] ]
+# hideOnMobile: will hide the link on screens smaller than 600px wide (default: false)
+# hideItsOwnPage: will hide the navigation link for a page on the page itself (ex: hide 'about' link on the about page) (default: true)
     nav = [
         [ [ "Home", "/"], [false, true] ], # todo test the / if not then create and if statement and .baseurl 
         [ [ "Portfolio", "https://portfolio.mshjri.com"], [false, true] ],
         [ [ "Blog", "/blog/"], [false, false] ],
         [ [ "About", "/about/"], [false, true] ],
         [ [ "RSS", ""], [true, true] ], # rss url will be provided by default
-        #add more links if needed
+        # add more links if needed
     ]
 
 [social]
