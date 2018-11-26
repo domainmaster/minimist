@@ -29,11 +29,9 @@ a{
     margin: 0 auto;
     width: 100vw;
     max-width: 80rem;
-    display: -ms-grid;
-    display: grid;
-    grid-template-columns: none;
-    grid-template-rows: auto 1fr auto auto;
-    justify-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 @media screen and (min-width:600px){
     .wrapper{
@@ -41,9 +39,7 @@ a{
     }
 }
 @media screen and (min-width:960px){
-    .wrapper.--homepage{
-        grid-template-rows: auto 1fr 1fr auto;
-    }
+
 }
 .innerWrapper{
     padding: 0 1.5rem;
@@ -66,7 +62,6 @@ Description: site navigation links
     text-transform: uppercase;
     letter-spacing: 0.0031rem;
     text-align: center;
-    grid-row: 1/2;
     float: right;
 }
 .nav__row{
@@ -74,18 +69,11 @@ Description: site navigation links
     margin: 0;
     list-style: none;
     font-weight: 700;
-    display: -ms-grid;
-    display: grid;
-    grid-template-rows: none;
-    grid-template-columns: auto;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    -webkit-justify-content: end;
-    justify-content: end;
-    grid-column-gap: 1.25rem;
+    display: flex;
+    justify-items:flex-end;
 }
 .nav__item{
-
+    margin-left: 1.25rem;
 }
 .nav__item.--noneOnPage{
     display: none;
@@ -154,8 +142,8 @@ Description: homepage profile
 */
 .profile{
     text-align: center;
-    align-self: center;
-    grid-row: 2/3;
+    margin-top: auto; 
+    padding-top: 5vh;
 
     display: -ms-grid;
     display: grid;
@@ -252,7 +240,6 @@ Description: homepage profile
 }
 @media screen and (min-width:960px){
     .profile{
-        align-self: end;
         height: max-content;
     }
     .profile__title{
@@ -272,7 +259,7 @@ Block Name: .footer block
 Description: website footer
 */
 .footer{
-    grid-row: 4/5;
+    margin-top: auto;
 }
 .footer__text{
     text-align: center;
@@ -302,7 +289,6 @@ Description: blogs posts
 .blog{
     text-align: left;
     margin: 3.125rem 0;
-    grid-row: 2/3;
 }
 .blog.--brief{
     display: none;
@@ -378,9 +364,7 @@ Description: blogs posts
 @media screen and (min-width:960px){
     .blog.--brief{
         display: block;
-        margin: 0 0 1.875rem 0;
-        grid-row: 3/4;
-
+        margin: 0;
         font-size: 0.7rem;
     }
     .blog.--brief .blog__title,
@@ -435,7 +419,6 @@ Description: article section
 .article{
     text-align: left;
     margin: 3.125rem 0;
-    grid-row: 2/3;
 }
 .article__head{
     

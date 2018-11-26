@@ -4,7 +4,7 @@
 {{ partial "head/head.html" . }}
 
 <body>
-    <div class="wrapper --homepage">
+    <div class="wrapper">
         {{ partial "header.html" . }}
         
         {{ partial "profile.html" . }}
@@ -12,7 +12,6 @@
         {{ if .Site.Params.enableHomepageBlogBrief }}
             {{ partial "blog/blog-list.html" . }}
         {{ end }}
-
 
         {{ partial "footer.html" . }}
     </div>
