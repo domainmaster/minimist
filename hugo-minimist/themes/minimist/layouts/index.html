@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html>
+{{ define "main" }}
+     
+    {{ partial "profile.html" . }}
 
-{{ partial "head/head.html" . }}
+    {{ if .Site.Params.enableHomepageBlogBrief }}
+        {{ partial "blog/blog-list.html" . }}
+    {{ end }}
 
-<body>
-    <div class="wrapper">
-        {{ partial "header.html" . }}
-        
-        {{ partial "profile.html" . }}
-        
-        {{ if .Site.Params.enableHomepageBlogBrief }}
-            {{ partial "blog/blog-list.html" . }}
-        {{ end }}
-
-        {{ partial "footer.html" . }}
-    </div>
-
-</body>
-</html>
+{{ end }}
