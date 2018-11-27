@@ -7,12 +7,16 @@
         <ul class="blog__postList">
             {{ if .IsHome }}
                 {{ if eq .Site.Params.briefSection ""}}
-                    {{ range first .Site.Params.numberOfBriefLinks .Pages }}
-                        {{ partial "blog/blog-item.html" . }}
+                    {{ if .Site.Params.numberOfBriefLinks }}
+                        {{ range first .Site.Params.numberOfBriefLinks .Pages }}
+                            {{ partial "blog/blog-item.html" . }}
+                        {{ end }}
                     {{ end }}
                 {{ else }}
-                    {{ range first .Site.Params.numberOfBriefLinks (where .Data.Pages "Type" .Site.Params.briefSection) }}
-                        {{ partial "blog/blog-item.html" . }}
+                    {{ if .Site.Params.numberOfBriefLinks }}
+                        {{ range first .Site.Params.numberOfBriefLinks (where .Data.Pages "Type" .Site.Params.briefSection) }}
+                            {{ partial "blog/blog-item.html" . }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             {{ else }}
