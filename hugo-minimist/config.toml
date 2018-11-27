@@ -36,7 +36,7 @@ pluralizeListTitles = false
         [ [ "Portfolio", "https://portfolio.mshjri.com"], [false, true] ],
         [ [ "Blog", "/blog/"], [false, false] ],
         [ [ "About", "/about/"], [false, true] ],
-        [ [ "RSS", ""], [true, true] ], # rss url will be provided by default
+        [ [ "RSS", ""], [true, true] ], # rss url will be provided by default, remove line to disable RSS.
         # add more links if needed
     ]    
 
