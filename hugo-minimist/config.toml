@@ -7,11 +7,15 @@ copyright = "Copyright © 2018, Omar AlMashjari; all rights reserved."
 
 pluralizeListTitles = false
 
+
 [params]
-    websiteTitle = "Omar Almashjari" # used on homepage and navigation
-    Description = "Front End Web Developer."
+    websiteTitle = "Omar Almashjari" # used on homepage and header
     email = "omar.mshjri@gmail.com"
 
+    # meta
+    author = "Omar Almashjari"
+    keywords = "front-end,web,javascript,JS,HTML,CSS,development,developer"
+    description = "Front End Web Developer."
 
     # Homepage brief
     enableHomepageBlogBrief = true
@@ -21,7 +25,6 @@ pluralizeListTitles = false
     
     # footer
     showMinimistCredits = true
-
 
 [[params.navigation]]
 # navigation links
@@ -35,7 +38,7 @@ pluralizeListTitles = false
         [ [ "About", "/about/"], [false, true] ],
         [ [ "RSS", ""], [true, true] ], # rss url will be provided by default
         # add more links if needed
-    ]
+    ]    
 
 [social]
     Github = "https://github.com/codezarsenal"
