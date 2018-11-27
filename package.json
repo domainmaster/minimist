@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodezArsenal/minimist.git"
+    "url": "git+https://github.com/mshjri/minimist.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodezArsenal/minimist/issues"
+    "url": "https://github.com/mshjri/minimist/issues"
   },
-  "homepage": "https://github.com/CodezArsenal/minimist#readme",
+  "homepage": "https://github.com/mshjri/minimist#readme",
   "dependencies": {
     "normalize.css": "^8.0.0"
   }
