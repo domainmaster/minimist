@@ -1,0 +1,38 @@
+<header>
+    <div class="innerWrapper">
+        <div class="headerTitle"><a class="headerTitle__link" href="{{ "/" | relURL }}">{{ .Site.Title }}</a></div>
+        <nav class="nav">
+            <ul class="nav__row">
+                
+                {{ with $data := .Site.Params.navigation }}
+                    {{ range $data }}
+                        {{- range $link := .nav }}
+
+                            {{ $section := index $link 0 0 }}
+                            {{ $url := index $link 0 1 }}
+                            {{ $hideOnMobile := index $link 1 0}}
+                            {{ $hideOnItsOwnPage := index $link 1 1 }}
+
+                            <li class="nav__item
+                            {{- if $hideOnMobile }} --displayOnTablet {{ end }}
+                            {{- if $hideOnItsOwnPage }}
+                                {{- if eq ( strings.ToLower $section) (strings.ToLower $.Section) }} --noneOnPage {{- end }} 
+                                {{- if $.IsHome }} {{- if eq $url "/" }} --noneOnPage {{- end }} {{- end }}
+                            {{- end }}">
+                                <a class="nav__link"
+                                    {{- if or (eq $section "RSS") (eq $section "rss") }}
+                                        href="{{ $.Site.RSSLink }}"
+                                    {{ else }}
+                                        href="{{ $url }}"
+                                    {{- end }}
+                                >{{- $section -}}</a>
+                            </li>
+                            
+                        {{ end }}
+                    {{ end }}
+                {{ end }}                
+
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,6 @@
+<li class="blog__postItem">
+    <a class="blog__postLink" href="{{ .URL }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="blog__postDate">{{ .Date.Format "January 2, 2006" }}</time>
+        <span class="blog__postTitle">{{ .Title }}</span>
+    </a>
+</li>

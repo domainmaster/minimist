@@ -1,0 +1,9 @@
+{{ define "main" }}
+     
+    {{ partial "profile.html" . }}
+
+    {{ if .Site.Params.enableHomepageBlogBrief }}
+        {{ partial "blog/blog-list.html" . }}
+    {{ end }}
+
+{{ end }}

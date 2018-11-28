@@ -1,0 +1,45 @@
+baseURL = "//example.com"
+languageCode = "en-us"
+title = "John Doe"
+theme = "minimist"
+copyright = "Copyright © 2018, John Doe; all rights reserved."
+
+googleAnalytics = ""
+pluralizeListTitles = false
+
+[params]
+    # meta
+    author = "John Doe"
+    keywords = "front-end,web,javascript,JS,HTML,CSS,development,developer"
+    description = "Full stack web deveoper and blogger."
+    
+    # profile
+    email = "john.doe@example.com"
+
+    # Homepage brief
+    enableHomepageBlogBrief = true
+    briefSection = "blog" # specify a section to show links from ( "" (blank), will list recent pages from all sections)
+    numberOfBriefLinks = 4
+    more = "More"
+    
+    # footer
+    showMinimistCredits = true
+
+[[params.navigation]]
+# navigation links
+# [ [name, URL ], [hideOnMobile, hideOnItsOwnPage] ]
+# hideOnMobile: will hide the link on screens smaller than 600px wide (default: false)
+# hideItsOwnPage: will hide the navigation link for a page on the page itself (ex: hide 'about' link on the about page) (default: true)
+    nav = [
+        [ [ "Home", "/"], [false, true] ],
+        [ [ "Portfolio", "https://portfolio.example.com"], [false, true] ],
+        [ [ "Blog", "/blog/"], [false, false] ],
+        [ [ "About", "/about/"], [false, true] ],
+        [ [ "RSS", ""], [true, true] ], # rss url will be provided by default, remove line to disable RSS.
+        # add more links here if needed
+    ]    
+
+[social]
+    Github = "https://github.com/github"
+    Medium = "https://medium.com/@medium"
+    Twitter = "https://twitter.com/twitter"

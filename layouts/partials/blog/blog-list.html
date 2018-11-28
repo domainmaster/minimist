@@ -1,0 +1,31 @@
+<section class="blog {{ if .IsHome }} --brief {{ end }}">
+    <div class="innerWrapper">
+        
+        <h1 class="blog__title">{{ .Title }}</h1>
+        <hr class="blog__seperator">
+        
+        <ul class="blog__postList">
+            {{ if .IsHome }}
+                {{ if eq .Site.Params.briefSection ""}}
+                    {{ if .Site.Params.numberOfBriefLinks }}
+                        {{ range first .Site.Params.numberOfBriefLinks .Pages }}
+                            {{ partial "blog/blog-item.html" . }}
+                        {{ end }}
+                    {{ end }}
+                {{ else }}
+                    {{ if .Site.Params.numberOfBriefLinks }}
+                        {{ range first .Site.Params.numberOfBriefLinks (where .Data.Pages "Type" .Site.Params.briefSection) }}
+                            {{ partial "blog/blog-item.html" . }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                {{ range .Pages }}
+                    {{ partial "blog/blog-item.html" . }}
+                {{ end }}
+            {{ end }}
+            
+        </ul>
+        <a class="blog__briefMoreLink" href=" {{ .Site.Params.briefSection | default (index .Site.Sections 0).Type }}">{{ .Site.Params.more }}</a>
+    </div>
+</section>

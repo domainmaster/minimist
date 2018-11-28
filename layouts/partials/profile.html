@@ -1,0 +1,15 @@
+<section class="profile">
+    {{ printf "<!-- profile elements already cenetered, no need for _innerWrapper; will mess up the current grid -->" | safeHTML}}
+    <h1 class="profile__title">{{ .Site.Title }}</h1>
+    <h2 class="profile__subtitle">{{ .Site.Params.Description }}</h2>
+
+    <ul class="profile__socialList">
+        
+        {{ range $key, $url := .Site.Social }}
+            <li class="profile__socialItem"><a class="profile__socialLink" href="{{ $url }}" target="_blank">{{ $key }}</a></li>
+        {{ end }}
+        
+    </ul>
+    <hr class="profile__seperator">
+    <a class="profile__email" href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+</section>

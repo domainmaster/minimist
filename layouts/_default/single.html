@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <article class="article">
+        <div class="innerWrapper">
+
+            <div class="article__head">
+                {{ if not (eq .Type "page") }}
+                    <time class="article__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ end }}
+                <h1 class="article__title">{{ .Title }}</h1>
+                <hr class="article__seperator">
+            </div>
+
+            <div class="article__body">
+                {{ .Content }}
+            </div>
+            
+        </div>
+    </article>
+{{ end }}
