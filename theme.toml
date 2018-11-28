@@ -3,19 +3,19 @@
 
 name = "Minimist"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
+licenselink = "https://github.com/mshjri/minimist/blob/master/LICENSE"
+description = "Minimal Personal Theme for Hugo. influenced by hugo coder theme"
+homepage = "http://mshjri.com/"
+tags = ["blog", "personal", "responsive", "minimalist"]
+features = ["analytics", "favicon", "BEM", "prism", "code-highlighting", "rss", "responsive"]
 min_version = "0.37.1"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Omar Al-Mashjari"
+  homepage = "mshjri.com"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Coder"
+  homepage = "https://luizdepra.com"
+  repo = "https://github.com/luizdepra/hugo-coder.git"
