@@ -2,9 +2,9 @@ baseURL = "//example.com"
 languageCode = "en-us"
 title = "John Doe"
 theme = "minimist"
-
 copyright = "Copyright © 2018, John Doe; all rights reserved."
 
+googleAnalytics = ""
 pluralizeListTitles = false
 
 [params]
