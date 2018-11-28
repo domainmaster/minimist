@@ -1,14 +1,29 @@
----
-title: "About"
-date: 2018-11-27T00:01:58+04:00
-draft: true
----
++++
+title = "About Hugo"
+slug = "about"
++++
 
-My name is Omar Nasser Al-Mashjari. I’m a programmer based in Abu Dhabi, UAE.  I’ve worked with many technologies in different fields. From a project to project I could play the role of Front &amp; Back end web development, Mobile development, UI &amp; UX. Web Administering, Security, Databases, …etc.
+Hugo is a static site engine written in Go.
 
-I’ve graduated from a BSc in Information Technology. recently and I’m currently I’m focusing on getting better at web development, from design UI’s to back-end scripting.
 
-Contact me at **[omar.mshjri@gmail.com](mailto:omar.mshjri@gmail.com)**.
+It makes use of a variety of open source projects including:
 
-Omar<br>
-_July, 2018_
+* [Cobra](https://github.com/spf13/cobra)
+* [Viper](https://github.com/spf13/viper)
+* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
+* [Cast](https://github.com/spf13/cast)
+
+Learn more and contribute on [GitHub](https://github.com/spf13).
+
+## Setup
+
+Some fun facts about [Hugo](http://gohugo.io/):
+
+* Built in [Go](http://golang.org/)
+* Loosely inspired by [Jekyll](http://jekyllrb.com/)
+* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
+* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
+
+Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
+
+Thanks for reading!

@@ -560,19 +560,17 @@ or a templating engine will add from a markdown file.
     margin: 1.25rem;
     padding-left: 1.25rem;
     border-left: 0.125rem solid #5f5f5f;
-    
 }
-.article__body blockquote:before{
+.article__body blockquote p:before{
     content:'\201C';
     color: #393939;
     font-size: 1.4rem;
 }
-.article__body blockquote:after{
+.article__body blockquote p:after{
     content: '\201D';
     color: #393939;
     font-size: 1.4rem;
 }
-
 .article__body pre{ 
 	white-space:pre-wrap;
 	padding:1.25rem;
@@ -586,7 +584,7 @@ or a templating engine will add from a markdown file.
     color: #d0d4d7;
     
     /* full width */
-    margin: 0;
+    margin: 1.25rem 0 1.25rem 0;
     width: 100vw;
     position: relative;
     left: -1.5rem;
@@ -615,6 +613,7 @@ or a templating engine will add from a markdown file.
     color: #d0d4d7;
     padding: 0.1875rem;
     border-radius: 0.1875rem;
+    vertical-align: text-bottom;
 }
 .article__body svg{
     max-width: 100%;
