@@ -4,7 +4,8 @@
   "description": "Minimal Personal Theme for Hugo. influenced by hugo-coder theme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server --source=exampleSite --themesDir=../.."
   },
   "repository": {
     "type": "git",
