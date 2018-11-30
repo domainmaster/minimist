@@ -144,14 +144,6 @@ Description: homepage profile
     text-align: center;
     margin-top: auto; 
     padding-top: 5vh;
-
-    display: -ms-grid;
-    display: grid;
-    grid-template-rows: repeat(5, max-content);
-    align-content: center;
-    grid-template-columns: none;
-    justify-items: stretch;
-    height: 100%;
 }
 .profile__title{
     font-weight: 700;
@@ -159,8 +151,6 @@ Description: homepage profile
     font-size: 1.625rem;
     text-transform: uppercase;
     margin: 0 0 0.625rem 0;
-    grid-row: 1/2;
-    grid-column: 1/2;
     line-height: 1.8em;
 }
 .profile__subtitle{
@@ -170,18 +160,14 @@ Description: homepage profile
     color: #939393;
     letter-spacing: 0.1113rem;
     margin: 0;
-    grid-row: 2/3;
-    grid-column: 1/2;
     line-height: 1.8em;
 }
 .profile__socialList{
     padding: 0;
     list-style: none;
-    margin: 2.1875rem 0;
+    margin: 1.5625rem 0;
     display: flex;
     justify-content: center;
-    grid-row: 3/4;
-    grid-column: 1/2;
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.0013rem;
@@ -209,8 +195,6 @@ Description: homepage profile
     height: 1px;
     background-color: #939393;
     width: 7.875rem;
-    grid-row: 4/5;
-    grid-column: 1/2;
     margin: 8vh auto 1.875rem auto;
 }
 .profile__email{
@@ -219,8 +203,6 @@ Description: homepage profile
     letter-spacing: 0.1113rem;
     text-decoration: underline;
     font-weight: 700;
-    grid-row: 5/6;
-    grid-column: 1/2;
 }
 .profile__email:hover,
 .profile__email:visited{
