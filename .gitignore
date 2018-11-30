@@ -10,6 +10,7 @@
 hugo-minimist/public/
 /public/
 /resources/_gen
+/exampleSite/public
 
 ### VisualStudioCode ###
 .vscode/*
