@@ -1,3 +1,5 @@
+# https://github.com/luizdepra/hugo-coder/blob/master/Makefile
+
 .PHONY: prepare release build demo clean
 
 build: prepare
