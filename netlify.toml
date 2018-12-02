@@ -1,6 +1,0 @@
-[build]
-    publish = "exampleSite/public"
-    command = "rm -rf exampleSite/public && hugo --source=exampleSite --themesDir=../.."
-
-[context.production.environment]
-    HUGO_VERSION = "0.51"
