@@ -1,18 +1,18 @@
 .PHONY: prepare release build demo clean
 
 build: prepare
-	./hugow --source demo
+	hugo --source demo
 
 demo: prepare
-	./hugow server --buildDrafts --source demo
+	hugo server --buildDrafts --source demo
 
 release: build
 	rm -rf ./resources && cp -r ./demo/resources ./resources
 
 prepare: clean
-	mkdir -p demo/themes/hugo-coder
+	mkdir -p demo/themes/minimist
 	rsync -av exampleSite/ demo
-	rsync -av --exclude='demo' --exclude='exampleSite' --exclude='.git' . demo/themes/hugo-coder
+	rsync -av --exclude='demo' --exclude='exampleSite' --exclude='.git' . demo/themes/minimist
 
 clean:
 	rm -rf demo
