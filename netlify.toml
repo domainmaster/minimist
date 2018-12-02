@@ -1,3 +1,4 @@
+
 [build]
     publish = "exampleSite/public"
     command = "rm -rf exampleSite/public && hugo --source=exampleSite --themesDir=../.."
