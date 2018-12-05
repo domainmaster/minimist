@@ -1,7 +1,7 @@
 ---
 title: "Theme Demo"
 date: 2018-11-28T18:21:28+04:00
-draft: true
+draft: false
 ---
 
 **Please refer to the markdown (.md) file for this guide to learn how to return specific HTML elements in markdown.**
